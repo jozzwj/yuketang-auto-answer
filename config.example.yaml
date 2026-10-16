@@ -1,0 +1,30 @@
+# 雨课堂自动答题助手 - 配置文件
+
+# 浏览器设置
+browser:
+  headless: false  # 是否无头模式（建议首次登录设为false）
+  user_data_dir: "./browser_data"  # 浏览器用户数据目录，保持登录态
+
+# 监控设置
+monitor:
+  check_interval: 300  # 课程列表扫描间隔（秒）
+  monitor_interval: 10  # 课堂内题目监控间隔（秒）
+  monitor_duration: 50  # 单门课程监控时长（分钟）
+  course_keywords: []   # 只监控包含这些关键词的课程，留空则监控全部
+
+# 答题设置
+answer:
+  strategy: "local"  # 答题策略: local(本地规则) / ai(AI辅助)
+  auto_submit: true  # 自动提交答案
+  delay_before_submit: 0.5  # 选择答案后延迟多久提交（秒）
+
+# AI设置（strategy=ai时生效）
+ai:
+  api_key: "your-api-key-here"
+  base_url: "https://api.openai.com/v1"
+  model: "gpt-3.5-turbo"
+
+# 日志设置
+logging:
+  level: "INFO"
+  file: "./logs/yuketang.log"
